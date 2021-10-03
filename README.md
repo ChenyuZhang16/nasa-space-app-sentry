@@ -17,7 +17,7 @@ This [folder](example/example_outputs) provides some example outputs of regions 
 
 # Installation
 
-## Requirement
+## Requirements
 - numpy
 - matplotlib
 - tqdm
