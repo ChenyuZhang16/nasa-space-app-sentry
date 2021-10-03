@@ -12,29 +12,17 @@ EAST_TEXT_DETECTOR = {
 }
 REGISTERED_FILE.append(EAST_TEXT_DETECTOR)
 
-# FRCNN_CONFIG = {
-#     "key": "frcnn_config",
-#     "download_name": "frcnn.zip",
-#     "name": "config.yaml",
-#     "dir_path": "feature_selector/frcnn/",
-#     "url": "https://drive.google.com/u/0/uc?export=download&confirm=Ikrx&id=1iJ9D_sunUKiJaQWRb4iAY0LCUJu8wR3q",
-#     "compression_method": "zip",
-#     "from_google_drive": True,
-#     "google_drive_id": "1iJ9D_sunUKiJaQWRb4iAY0LCUJu8wR3q",
-# }
-# REGISTERED_FILE.append(FRCNN_CONFIG)
-
-# FRCNN_MODEL = {
-#     "key": "frcnn_model",
-#     "download_name": "frcnn.zip",
-#     "name": "model_finetuned.bin",
-#     "dir_path": "feature_selector/frcnn/",
-#     "url": "https://drive.google.com/u/0/uc?export=download&confirm=Ikrx&id=1iJ9D_sunUKiJaQWRb4iAY0LCUJu8wR3q",
-#     "compression_method": "zip",
-#     "from_google_drive": True,
-#     "google_drive_id": "1iJ9D_sunUKiJaQWRb4iAY0LCUJu8wR3q",
-# }
-# REGISTERED_FILE.append(FRCNN_MODEL)
+EAST_TEXT_DETECTOR = {
+    "key": "nasa_global_landslide_catalog_point.csv",
+    "download_name": "nasa_global_landslide_catalog_point.csv",
+    "name": "nasa_global_landslide_catalog_point.csv",
+    "dir_path": "data",
+    "url": "https://maps.nccs.nasa.gov/arcgis/sharing/content/items/eec7aee8d2e040c7b8d3ee5fd0e0d7b9/data",
+    "compression_method": None,
+    "from_google_drive": False,
+    "google_drive_id": None,
+}
+REGISTERED_FILE.append(EAST_TEXT_DETECTOR)
 
 def getResourceRecord(key: str, registry=REGISTERED_FILE):
     """
