@@ -59,3 +59,33 @@
 
 ![Raw data](./example_outputs/example_4/raw_data_plot.png)
 ![Landslide map](./example_outputs/example_4/prediction_plot.png)
+
+## Example 5
+- Bandarban, Bangladesh
+- Latitude = 92.36
+- Longitude = 22.16
+- ROI width = 5 km
+- ROI height = 5 km
+- pre_date_1 = '2016-06-01'
+- pre_date_2 = '2017-06-01'
+- post_date_1 = '2017-09-01'
+- post_date_1 = '2019-06-01'
+- max cloud % = 5
+
+![Raw data](./example_outputs/example_5/raw_data_plot.png)
+![Landslide map](./example_outputs/example_5/prediction_plot.png)
+
+## Example 6
+- Xinmo Village, China
+- Latitude = 103.66
+- Longitude = 32.08
+- ROI width = 20 km
+- ROI height = 20 km
+- pre_date_1 = '2016-01-01'
+- pre_date_2 = '2017-06-15'
+- post_date_1 = '2017-07-01'
+- post_date_1 = '2018-07-01'
+- max cloud % = 5
+
+![Raw data](./example_outputs/example_5/raw_data_plot.png)
+![Landslide map](./example_outputs/example_5/prediction_plot.png)
