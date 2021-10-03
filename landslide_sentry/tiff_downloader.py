@@ -1,3 +1,5 @@
+from landslide_sentry.cache_manager.cache_loader import downloadFromWeb, extractZip
+
 import ee
 from tqdm import tqdm
 import os
@@ -50,27 +52,27 @@ def getMosaicImgFromGeeImgCollec(aoi, img_collection: str, bands: list, start_da
     return img
 
 
-def downloadFromWeb(url, download_path):
-    with requests.get(url, stream=True) as response:
-        response.raise_for_status()
-        block_size = 1024
-        total_size = int(response.headers.get('content-length', 0))
+# def downloadFromWeb(url, download_path):
+#     with requests.get(url, stream=True) as response:
+#         response.raise_for_status()
+#         block_size = 1024
+#         total_size = int(response.headers.get('content-length', 0))
 
-        progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True)
+#         progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True)
 
-        with open(download_path, 'wb') as file:
-            for chunk in response.iter_content(chunk_size=block_size):
-                progress_bar.update(len(chunk))
-                file.write(chunk)
+#         with open(download_path, 'wb') as file:
+#             for chunk in response.iter_content(chunk_size=block_size):
+#                 progress_bar.update(len(chunk))
+#                 file.write(chunk)
 
-        progress_bar.close()
+#         progress_bar.close()
 
-        if total_size != 0 and progress_bar.n != total_size:
-            os.remove(download_path)
+#         if total_size != 0 and progress_bar.n != total_size:
+#             os.remove(download_path)
 
-            raise Exception(f"Downloaded file size different from the web content length. " +
-                            f"Content length is {total_size}B. File size is {progress_bar.n}B. " +
-                            "Try re-downloading.")
+#             raise Exception(f"Downloaded file size different from the web content length. " +
+#                             f"Content length is {total_size}B. File size is {progress_bar.n}B. " +
+#                             "Try re-downloading.")
 
 
 def downloadImg(img, aoi, save_path, scale):
@@ -85,12 +87,12 @@ def downloadImg(img, aoi, save_path, scale):
     downloadFromWeb(download_url, save_path)
 
 
-def extractZip(zip_path, dest_path):
-    with zipfile.ZipFile(zip_path, 'r') as zip:
-        extracted_names = zip.namelist()
-        zip.extractall(path=dest_path)
+# def extractZip(zip_path, dest_path):
+#     with zipfile.ZipFile(zip_path, 'r') as zip:
+#         extracted_names = zip.namelist()
+#         zip.extractall(path=dest_path)
 
-    return extracted_names
+#     return extracted_names
 
 
 def get_s2_sr_cld_col(aoi, start_date, end_date, cloud_filter):
@@ -191,8 +193,8 @@ def downloadAndExtractS2Data(aoi, start_date: str, end_date: str, cloud_percent:
         downloadImg(img_bgr, aoi, s2_zip, scale=10)
         downloadImg(clouds, aoi, clouds_zip, scale=10)
 
-        extractZip(s2_zip, download_path)
-        extractZip(clouds_zip, download_path)
+        extractZip(s2_zip)
+        extractZip(clouds_zip)
     except ee.EEException as e:
         print(f"Encountered exception: {type(e)} - {e}")
         print(f"This could be due to level 2 data not available for the selected dates.")
@@ -204,7 +206,7 @@ def downloadAndExtractS2Data(aoi, start_date: str, end_date: str, cloud_percent:
         download_file = os.path.join(download_path, "download_S2.zip")
 
         downloadImg(img, aoi, download_file, scale=10)
-        extractZip(download_file, download_path)
+        extractZip(download_file)
 
 
 def downloadAndExtractDemData(aoi, download_path: str):
@@ -220,7 +222,7 @@ def downloadAndExtractDemData(aoi, download_path: str):
     for key in img:
         download_file = os.path.join(download_path, "download_" + key + ".zip")
         downloadImg(img[key], aoi, download_file, scale=30)
-        extractZip(download_file, download_path)
+        extractZip(download_file)
 
 
 def downloadEssentialTifFiles(roi, pre_path: str, post_path: str, dem_path: str, pre_date_1: str, pre_date_2: str, post_date_1: str, post_date_2: str, cloud_percent: int):

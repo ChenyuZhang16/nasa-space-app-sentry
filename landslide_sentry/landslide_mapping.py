@@ -3,7 +3,7 @@ from cnn_landslide_mapping.predictor import detect_landslides
 import os
 
 
-def generateLandsideMap(model_path: str, pre_dir: str, post_dir: str, dem_dir: str, save_dir: str, data_dir: str, debug=False):
+def generateLandslideMap(model_path: str, pre_dir: str, post_dir: str, dem_dir: str, save_dir: str, data_dir: str, debug=False):
 
     raw_data_dict = dict()
 
