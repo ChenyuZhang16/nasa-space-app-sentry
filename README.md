@@ -1,7 +1,13 @@
 # nasa-space-app-sentry
 Software repository for 2021 NASA space apps challenge - Team SENTRY
 
-We deploy an innovative AI-based landslide detector that links global landslide inventory with local-scale landslide monitoring. This application integrates the automated detection model into an interactive, user-friendly and lightweight framework that does not require any knowledge and professional background in remote sensing and computing. It can facilitate knowledge sharing among all stakeholders and engage people from both science and community to collaborate in evaluating the risks of landslides in rural areas. This application has great potential to be further developed with NASA Landslide Nowcast.
+We deploy an innovative AI-based landslide detector that links global landslide inventory with local-scale landslide monitoring.  This application integrates the automated detection model into an interactive, user-friendly and lightweight framework that does not require any knowledge and professional background in remote sensing and computing. It can facilitate knowledge sharing among all stakeholders and engage people from both science and community to collaborate in evaluating the risks of landslides in rural areas. This application has great potential to be further developed with NASA Landslide Nowcast.
+
+Team member: 
+1. Qiuayng Chen: PhD Candidate in Land Surface Dynamics at the University of Edinburgh, researching river meandering and riparian vegetation change with remote sensing tools.
+2. Chengyu Zhang: postgraduate at the Imperial College London, interested in computer architecture.
+3. Yixiao Han: undergraduate student at the University of Manchester, majoring in Physics with Theoretical Physics.
+
 
 # landslide_sentry
 
