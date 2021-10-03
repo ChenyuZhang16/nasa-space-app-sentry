@@ -225,10 +225,15 @@ def downloadAndExtractDemData(aoi, download_path: str):
 
 def downloadEssentialTifFiles(roi, pre_path: str, post_path: str, dem_path: str, pre_date_1: str, pre_date_2: str, post_date_1: str, post_date_2: str, cloud_percent: int):
 
+    print("Downloading pre-event Sentinel 2 data (RGB, cloud coverage) ...")
     downloadAndExtractS2Data(
         roi, pre_date_1, pre_date_2, cloud_percent, pre_path)
+
+    print("Downloading post-event Sentinel 2 data (RGB, cloud coverage) ...")
     downloadAndExtractS2Data(
         roi, post_date_1, post_date_2, cloud_percent, post_path)
+    
+    print("Downloading DEM data (elevation, hillshade, slope) ...")
     downloadAndExtractDemData(roi, dem_path)
 
 
