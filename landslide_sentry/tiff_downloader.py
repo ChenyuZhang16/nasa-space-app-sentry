@@ -52,29 +52,6 @@ def getMosaicImgFromGeeImgCollec(aoi, img_collection: str, bands: list, start_da
     return img
 
 
-# def downloadFromWeb(url, download_path):
-#     with requests.get(url, stream=True) as response:
-#         response.raise_for_status()
-#         block_size = 1024
-#         total_size = int(response.headers.get('content-length', 0))
-
-#         progress_bar = tqdm(total=total_size, unit='iB', unit_scale=True)
-
-#         with open(download_path, 'wb') as file:
-#             for chunk in response.iter_content(chunk_size=block_size):
-#                 progress_bar.update(len(chunk))
-#                 file.write(chunk)
-
-#         progress_bar.close()
-
-#         if total_size != 0 and progress_bar.n != total_size:
-#             os.remove(download_path)
-
-#             raise Exception(f"Downloaded file size different from the web content length. " +
-#                             f"Content length is {total_size}B. File size is {progress_bar.n}B. " +
-#                             "Try re-downloading.")
-
-
 def downloadImg(img, aoi, save_path, scale):
 
     download_url = img.getDownloadURL({
@@ -85,14 +62,6 @@ def downloadImg(img, aoi, save_path, scale):
     os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
     downloadFromWeb(download_url, save_path)
-
-
-# def extractZip(zip_path, dest_path):
-#     with zipfile.ZipFile(zip_path, 'r') as zip:
-#         extracted_names = zip.namelist()
-#         zip.extractall(path=dest_path)
-
-#     return extracted_names
 
 
 def get_s2_sr_cld_col(aoi, start_date, end_date, cloud_filter):
