@@ -87,5 +87,5 @@
 - post_date_1 = '2018-07-01'
 - max cloud % = 5
 
-![Raw data](./example_outputs/example_5/raw_data_plot.png)
-![Landslide map](./example_outputs/example_5/prediction_plot.png)
+![Raw data](./example_outputs/example_6/raw_data_plot.png)
+![Landslide map](./example_outputs/example_6/prediction_plot.png)
