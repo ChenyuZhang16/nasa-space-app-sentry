@@ -16,7 +16,7 @@ EAST_TEXT_DETECTOR = {
     "key": "NASA_Landslide_Catalog_2008_2021.html",
     "download_name": "NASA_Landslide_Catalog_2008_2021.html",
     "name": "NASA_Landslide_Catalog_2008_2021.html",
-    "dir_path": "model",
+    "dir_path": "HTML",
     "url": "https://drive.google.com/u/0/uc?id=1zttpFp3vrHMqCk6jkQOTAX_cFd1NoxIG&export=download",
     "compression_method": None,
     "from_google_drive": True,
